@@ -1,4 +1,5 @@
 from collections import deque
+from algorithm_profiler import profile_algorithm
 
 class binary_tree_node:
     def __init__(self, val: int):
@@ -7,6 +8,7 @@ class binary_tree_node:
         self.right_tree: binary_tree_node | None = None
 
 # 层序遍历：BFS
+@profile_algorithm
 def level_order(tree: binary_tree_node | None):
     if tree is None:
         return

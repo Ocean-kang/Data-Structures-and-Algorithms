@@ -29,13 +29,13 @@ if __name__ == '__main__':
     n2.right_tree = n5
 
     '''my algo'''
-    my.pre_order(n1)
-    my.mid_order(n1)
-    my.last_order(n1)
+    # my.pre_order(n1)
+    # my.mid_order(n1)
+    # my.last_order(n1)
     my.level_order(n1)
 
-    '''official algo'''
-    print(pre_order(m1))
-    print(in_order(m1))
-    print(post_order(m1))
-    print(level_order(m1))
+    # '''official algo'''
+    # print(pre_order(m1))
+    # print(in_order(m1))
+    # print(post_order(m1))
+    # print(level_order(m1))
