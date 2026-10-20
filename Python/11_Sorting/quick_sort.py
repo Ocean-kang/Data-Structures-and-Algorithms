@@ -34,12 +34,17 @@ def partition_official(nums: list[int], left: int, right: int) -> int:
     nums[i], nums[left] = nums[left], nums[i]
     return i  # 返回基准数的索引
 
-def quick_sort(nums: list[int], left: int, right: int):
+def _quick_sort(nums: list[int], left: int, right: int) -> None:
     if left >= right:
-        return nums
+        return
 
     # 完整
     base = partition(nums, left, right)
-    quick_sort(nums, left, base - 1)
-    quick_sort(nums, base + 1, right)
+    _quick_sort(nums, left, base - 1)
+    _quick_sort(nums, base + 1, right)
+
+
+def quick_sort(nums: list[int]) -> list[int]:
+    """使用快速排序将列表原地升序排列，并返回原列表。"""
+    _quick_sort(nums, 0, len(nums) - 1)
     return nums

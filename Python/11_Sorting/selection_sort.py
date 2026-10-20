@@ -1,4 +1,5 @@
-def selection_sort(nums: list[int]):
+def selection_sort(nums: list[int]) -> list[int]:
+    """原地升序排序，并返回原列表。"""
 
     n = len(nums)
     for i in range(n):

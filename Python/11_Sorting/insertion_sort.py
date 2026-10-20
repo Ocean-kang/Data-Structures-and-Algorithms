@@ -7,7 +7,8 @@ def insert(nums, base_index):
     nums[j+1] = base
     return nums
 
-def insertion_sort(nums: list[int]):
+def insertion_sort(nums: list[int]) -> list[int]:
+    """原地升序排序，并返回原列表。"""
     n = len(nums)
     for i in range(1, n):
         base_index = i

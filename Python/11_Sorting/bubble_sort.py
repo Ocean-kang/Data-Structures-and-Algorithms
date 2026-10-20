@@ -1,5 +1,6 @@
 
-def bubble_sort(nums: list[int]):
+def bubble_sort(nums: list[int]) -> list[int]:
+    """原地升序排序，并返回原列表。"""
     n = len(nums)
     for i in range(n, 0, -1):
         exchange: bool = False

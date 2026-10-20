@@ -27,14 +27,20 @@ def merge(nums: list[int], left: int, mid: int, right: int):
     for k in range(0, len(tmp)):
         nums[left + k] = tmp[k]
 
-def merge_sort(nums: list[int], left: int, right: int):
+def _merge_sort(nums: list[int], left: int, right: int) -> None:
     """归并排序"""
     # 终止条件
     if left >= right:
-        return  # 当子数组长度为 1 时终止递归
+        return  # 当子数组长度不超过 1 时终止递归
     # 划分阶段
     mid = (left + right) // 2 # 计算中点
-    merge_sort(nums, left, mid)  # 递归左子数组
-    merge_sort(nums, mid + 1, right)  # 递归右子数组
+    _merge_sort(nums, left, mid)  # 递归左子数组
+    _merge_sort(nums, mid + 1, right)  # 递归右子数组
     # 合并阶段
     merge(nums, left, mid, right)
+
+
+def merge_sort(nums: list[int]) -> list[int]:
+    """使用归并排序将列表原地升序排列，并返回原列表。"""
+    _merge_sort(nums, 0, len(nums) - 1)
+    return nums
